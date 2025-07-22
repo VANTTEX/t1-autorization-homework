@@ -29,9 +29,22 @@ public class ExampleController {
         return "Привет, админ";
     }
 
+    @GetMapping("/premium-user")
+    @Operation(summary = "Доступен только премиум-пользователям")
+    @PreAuthorize("hasAnyRole('PREMIUM_USER', 'ADMIN')")
+    public String premiumUser() {
+        return "Привет, премиум-пользователь";
+    }
+
     @GetMapping("/get-admin")
-    @Operation(summary = "Получить роль ADMIN (для демонстрации)")
+    @Operation(summary = "Получить роль ADMIN")
     public void getAdmin() {
         userService.getAdmin();
+    }
+
+    @GetMapping("/get-premium-user")
+    @Operation(summary = "Получить роль PREMIUM-USER")
+    public void getPremiumUser() {
+        userService.getPremiumUser();
     }
 }

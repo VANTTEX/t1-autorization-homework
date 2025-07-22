@@ -50,4 +50,11 @@ public class UserService {
         user.setRole(Role.ROLE_ADMIN);
         saveUser(user);
     }
+
+    @Deprecated
+    public void getPremiumUser(){
+        var user = getCurrentUser();
+        user.setRole(Role.ROLE_PREMIUM_USER);
+        saveUser(user);
+    }
 }
