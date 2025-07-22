@@ -42,7 +42,9 @@ docker-compose up -d
 
 В консоли видим: Привет, админ
 
-Получаем права примиум пользователя http://localhost:8080/example/get-premium-user
+Так же с правами админа мы можем перейти на http://localhost:8080/example/premium-user
+
+Получаем права премиум-пользователя http://localhost:8080/example/get-premium-user
 
 Отправляем запрос на http://localhost:8080/example/premium-user
 
